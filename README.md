@@ -1,1 +1,0 @@
-# sample-project-candidate-base
