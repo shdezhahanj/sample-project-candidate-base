@@ -1,8 +1,39 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pg_trgm]
+}
+
+enum NodeType {
+  FOLDER
+  FILE
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  nodes     Node[]   @relation("NodeOwners")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Node {
+  id        String   @id @default(uuid())
+  name      String
+  type      NodeType
+  parentId  String?
+  parent    Node?    @relation("NodeHierarchy", fields: [parentId], references: [id], onDelete: Cascade)
+  children  Node[]   @relation("NodeHierarchy")
+  owners    User[]   @relation("NodeOwners")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([parentId])
+  @@index([name(ops: raw("gin_trgm_ops"))], type: Gin)
 }

@@ -1,0 +1,157 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+}
+
+.placeholder {
+  color: #888;
+}
+
+.breadcrumb {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.breadcrumb a {
+  cursor: pointer;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.value {
+  font-size: 1rem;
+}
+
+.select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #eee;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.helpText {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Custom Select Combobox styles */
+.dropdownContainer {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+}
+
+.dropdownInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownInput {
+  width: 100%;
+  padding: 0.5rem;
+  padding-right: 2rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.dropdownInput:focus {
+  outline: none;
+  border-color: #0066cc;
+  background-color: #fff;
+  cursor: text;
+}
+
+.dropdownArrow {
+  position: absolute;
+  right: 0.75rem;
+  pointer-events: none;
+  color: #666;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.dropdownArrowOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow: auto;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  white-space: nowrap;
+  width: fit-content;
+  min-width: 100%;
+}
+
+.dropdownItem:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdownItemActive {
+  background-color: #e6f2ff;
+  font-weight: 600;
+  color: #0066cc;
+}
+
+.dropdownNoResults {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+}
