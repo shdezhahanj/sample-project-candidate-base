@@ -1,0 +1,94 @@
+.treeContainer {
+  padding: 1rem;
+  flex: 1;
+  overflow: auto;
+}
+
+.node {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  user-select: none;
+  gap: 0.5rem;
+  width: fit-content;
+  min-width: 100%;
+  white-space: nowrap;
+}
+
+.node:hover {
+  background-color: #e6e6e6;
+}
+
+.nodeSelected {
+  background-color: #d0e8ff !important;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.arrow svg {
+  width: 12px;
+  height: 12px;
+}
+
+.arrowEmpty {
+  width: 16px;
+  height: 16px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #444;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.children {
+  margin-left: 1.25rem;
+}
+
+.loading {
+  color: #999;
+}
+
+.loadMore {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  color: #0066cc;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.loadMore:hover {
+  text-decoration: underline;
+}
+
+.loadMoreNested {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #0066cc;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.loadMoreNested:hover {
+  text-decoration: underline;
+}
+

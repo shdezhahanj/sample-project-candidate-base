@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  createNode(name: String!, ownerIds: [String!], parentId: String, type: NodeType!): Node!
+  deleteNode(id: ID!): Boolean!
+  updateNode(id: ID!, name: String, ownerIds: [String!], parentId: String): Node!
+}
+
+type Node {
+  children: [Node!]
+  hasChildren: Boolean!
+  id: ID!
+  name: String!
+  owners: [User!]!
+  parentId: String
+  type: NodeType!
+}
+
+enum NodeType {
+  FILE
+  FOLDER
+}
+
+type Query {
+  ancestors(nodeId: String!): [Node!]!
+  children(after: String, first: Float, parentId: String!): [Node!]!
+  folders(excludeDescendantsOf: String, limit: Float, search: String): [Node!]!
+  hello: String!
+  rootNodes(after: String, first: Float): [Node!]!
+  users: [User!]!
+}
+
+type User {
+  email: String!
+  id: ID!
+  name: String!
+}
